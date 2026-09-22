@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const LanyardStrap = () => (
-  <div className="flex flex-col items-center -mb-5 z-20 pointer-events-none select-none">
+  <div className="no-print flex flex-col items-center -mb-5 z-20 pointer-events-none select-none">
     <div className="w-14 h-16 bg-gradient-to-b from-indigo-900 to-indigo-700 rounded-t-sm shadow-md border-x-2 border-indigo-400/40 relative">
       <div className="absolute inset-y-0 left-1.5 w-[2px] bg-white/20" />
       <div className="absolute inset-y-0 right-1.5 w-[2px] bg-white/20" />

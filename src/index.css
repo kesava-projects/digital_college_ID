@@ -109,3 +109,60 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 } */
+
+/* ========================================================
+   PRINT-ONLY STYLES: Isolates the ID card Front and Back
+   ======================================================== */
+@media print {
+  /* 1. Hide everything on the website */
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* 2. Show only the printable container and its contents */
+  #printable-id-card-area,
+  #printable-id-card-area * {
+    visibility: visible !important;
+  }
+
+  /* 3. Reset document canvas to clean white margins */
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* 4. Position the printable cards neatly at the top of the printed page */
+  #printable-id-card-area {
+    position: fixed !important;
+    left: 50% !important;
+    top: 20mm !important;
+    transform: translateX(-50%) !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 15mm !important;
+    z-index: 99999 !important;
+  }
+
+  /* 5. Force browsers to print exact colors, gradients, and images */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 6. Hide interactive or decorative hardware on print (lanyards, sheen) */
+  .no-print {
+    display: none !important;
+  }
+
+  @page {
+    size: auto;
+    margin: 10mm;
+  }
+}
